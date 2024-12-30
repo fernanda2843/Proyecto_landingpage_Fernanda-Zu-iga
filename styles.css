@@ -1,0 +1,184 @@
+/*----------SECTION 1: NAVBAR (logo, menu, redes sociales, log in sing up)--------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#fondo {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+body {
+    background-color: #FFFFFF;
+    height: 500vh;
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: #00010;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+    position: fixed;
+    top: 0;
+
+    #logo {
+        margin-left: 100px;
+
+    }
+
+    #logo-mobile {
+        display: none;
+        border: solid 1px white;
+        border-radius: 50%;
+        padding: 7px;
+    }
+
+    .links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 20px;
+
+        a {
+            text-decoration: none;
+            color: white;
+            justify-self: center;
+        }
+
+        .gray {
+            color: grey;
+            border;
+        }
+
+        .registro {
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr;
+        }
+
+        #bar {
+            height: 100%;
+            width: 1px;
+            background-color: white;
+        }
+
+        .languages {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+
+            img {
+                margin-right: 40px;
+            }
+        }
+    }
+
+}
+
+/* Desde aqui empieza la version mobile*/
+@media (max-width: 950px) {
+    html {
+        background-color: red;
+    }
+
+    nav {
+        #logo {
+            display: none;
+        }
+
+        #logo-mobile {
+            display: inline;
+            margin-left: 40px;
+            height: 40px;
+        }
+
+        .links {
+            grid-template-columns: 1fr;
+
+            .languages {
+                grid-template-columns: 1fr;
+                justify-items: end;
+
+                a {
+                    display: none;
+                }
+            }
+
+            .registro {
+                display: none;
+            }
+        }
+    }
+}
+
+/*-------SECTION 2: GALLERY--------*/
+
+
+#gallery {
+    background-color: white;
+}
+
+
+
+
+
+/* ---SECTION3: DEVELOPMENTS_imagenes----*/
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 10px;
+    padding: 100px;
+}
+
+img {
+    max-width: 100%;
+}
+
+h5,
+h4 {
+    margin-left: 27px;
+    color: #464547;
+}
+
+h4 {
+    font-size: 38px;
+    color: #000000;
+}
+
+h5 {
+    font-size: 22px;
+}
+
+/*Responsive_ mobile*/
+
+@media (max-width: 1270px) {
+    section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    section {
+        grid-template-columns: 1fr;
+    }
+
+    h5,
+    h4 {
+        display: none;
+        /*Lo uso para que el texto desaparezca a el abrir en un telephone*/
+    }
+}
+
+#uno {
+    overflow: hidden;
+}
