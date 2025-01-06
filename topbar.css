@@ -1,58 +1,252 @@
+/*----------SECTION 1: NAVBAR (logo, menu, redes sociales, log in sing up)--------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: PFRegal;
+    src: url(fonts/PFRegalDisplayPro-Regular.ttf);
+    font-family: PFRblack;
+    src: url(fonts/PFRegalDisplayPro-Black.ttf);
+    font-family: Brandon;
+    src: url(fonts/Brandon.otf);  
+}
+
+html{
+    font-family: PFRblack;
+}
+
+
+body {
+    background-color: #FFFFFF;
+    height: 500vh;
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: #00010;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+    position: fixed;
+    top: 0;
+
+    #logo {
+        margin-left: 122px;
+        top: 34px;
+        width: 266px;
+        height: 26px;
+
+    }
+
+    #logo-mobile {
+        display: none;
+        border: solid 1px white;
+        border-radius: 50%;
+        padding: 20px;
+    }
+
+    .links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+
+
+
+        a {
+            text-decoration: none;
+            color: white;
+            justify-self: center;
+            
+        }
+
+        .gray {
+            color: grey;
+        }
+
+        .registro {
+            display: grid;
+            grid-template-columns: 1fr 1px 1fr;
+        }
+
+        #bar {
+            height: 100%;
+            width: 1px;
+            background-color: white;
+        }
+
+        .languages {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+
+            img {
+                margin-right: 40px;
+            }
+        }
+    }
+
+}
+
+
 /*Titulos del topbar*/
 #fondo {
     width: 100%;
-    height: 350px;
+    max-height: 900px;
     object-fit: cover;
 }
+
 
 #topbar {
     background-color: rgba(7, 6, 6, 0.39);
     position: fixed;
-    height: 50px;
+    height: 90px;
     width: 100%;
-
 }
 
 #titulos-topbar {
     position: absolute;
-    top: 100px;
-    margin-left: 5vw;
+    top: 490px;
+    margin-left: 8vw;
     color: #FFFFFF;
+
+
+    h2 {
+        color: #B4B7B7;
+        font-size: 40px;
+    }
+
+    h3{
+        color: #FFFFFF;
+        font-size: 80px;
+
+    }
 
     button {
         background-color: transparent;
+        font-family: Brandon;
+        font-size: 30px;
         border-color: #FFFFFF;
-        border-radius: 50px;
+        border-radius: 100px;
         padding: 10px;
         color: white;
         border: 1px solid;
+        width: 350px;
+        height: 55px;
+        top: 900px;
+        justify-items: center;
+
+        img{
+            align-items: self-start;
+            padding-right: 70px;
+            
+        }
     }
 }
+
+.buscador{
+    display: grid;
+    grid-template-columns: 1fr;
+    position: absolute; 
+    right: 35px ;
+    top: 165px;
+    img{
+        
+        align-items: self-right;
+        padding-left: 230px;
+        
+    }
+   
+    button{
+    
+     background-color: transparent;
+     border-color: #FFFFFF;
+     border-radius: 100px;
+     padding: 10px;
+     color: white;
+     font-family: Brandon;
+     border: 1px solid;
+     text-align: left;
+     width: 450px;
+     height: 50px;
+     font-size: 20px;
+    }
+     
+ }
 
 /*REDES: Iconos follow*/
 #redes {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: autopx 41px 25px 25px 25px;
-    width: 45px;
+    width: 55px;
     justify-items: center;
     position: fixed;
-    top: 100px;
+    top: 380px;
+    color: #7E7E7E;
 
     img {
         display: block;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
     p {
         transform: rotate(90deg);
         display: inline-block;
+        color: #7E7E7E;
+        font-family: Brandon;
+        font-weight: bold;
+        font-size: 20px;
+        
     }
 
     #raya {
-        height: 25px;
+        height: 40px;
         width: 1px;
         border-left: 1px solid;
-        margin-top: 10px;
+        margin-top: 15px;
+    }
+}
+
+
+/* Desde aqui empieza la version mobile*/
+@media (max-width: 950px) {
+    nav {
+        #logo {
+            display: none;
+        }
+
+        #logo-mobile {
+            display: inline;
+            margin-left: 30px;
+            height: 75px;
+        }
+
+        .links {
+            grid-template-columns: 1fr;
+
+            .languages {
+                grid-template-columns: 1fr;
+                justify-items: end;
+
+                a {
+                    display: none;
+                }
+            }
+
+            .registro {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 700px){
+    #redes{
+        display: none;
     }
 }

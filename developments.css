@@ -1,0 +1,105 @@
+/* ---SECTION3: DEVELOPMENTS_imagenes----*/
+.titulos{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    display: inline;
+    
+    #p1{
+        font-size: 40px;
+        color: #DF991B; 
+        line-height: 0%;
+    }
+
+    #p2{
+        font-size: 80px;
+        color: #000000;
+        line-height: 0%;
+        
+    }
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 10px;
+    padding: 100px;
+
+}
+
+img {
+    max-width: 100%;
+}
+
+h5,
+h4 {
+    margin-left: 27px;
+    color: #464547;
+}
+
+h4 {
+    font-size: 40px;
+    color: #000000;
+}
+
+h5 {
+    font-size: 25px;
+}
+
+/*Responsive_ mobile*/
+
+@media (max-width: 1270px) {
+    section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .titulos{
+        #p1 {
+            font-size: 40px;
+        }
+            
+        #p2{
+            font-size: 70px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .titulos{
+        #p1 {
+            font-size: 35px;
+        }
+            
+        #p2{
+            font-size: 60px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .titulos{
+        #p1{
+            font-size: 30px;
+        }
+        #p2{
+            font-size: 45px;
+        }
+    }
+
+    section {
+        grid-template-columns: 1fr;
+    }
+
+    h5,
+    h4 {
+        display: none;
+        /*Lo uso para que el texto desaparezca a el abrir en un telephone*/
+    }
+}
+
+#uno {
+    overflow: hidden;
+}
