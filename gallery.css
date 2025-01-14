@@ -20,11 +20,16 @@ html{
 .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 10%;
 
     .fotos {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        gap: 15px;
+        row-gap: 15px;
+        overflow: hidden;
+        overflow-x: scroll;
+        width: 99%;
+
     }
 
     #foto1 {
@@ -78,9 +83,10 @@ html{
     }
 
     img {
-        width: 100%;
+        width: 95%;
         height: 100%;
         object-fit: cover;
+        overflow: auto;
     }
 
     /*Botones y texto*/
@@ -123,6 +129,11 @@ html{
         .textos {
             text-align: right;
             overflow: hidden;
+            h4{
+                font-size: 28px;
+                font-family: Brandon;
+                text-align: justify;
+            }
 
             h6 {
                 font-size: 30px;
@@ -140,7 +151,7 @@ html{
 }
 
 /*Responsive- media queries*/
-@media (max-width: 900px) {
+@media (max-width: 700px) {
     .gallery {
         grid-template-columns: 1fr;
 

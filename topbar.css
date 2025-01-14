@@ -5,23 +5,28 @@
     box-sizing: border-box;
 }
 
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 @font-face {
     font-family: PFRegal;
     src: url(fonts/PFRegalDisplayPro-Regular.ttf);
     font-family: PFRblack;
     src: url(fonts/PFRegalDisplayPro-Black.ttf);
     font-family: Brandon;
-    src: url(fonts/Brandon.otf);  
+    src: url(fonts/Brandon.otf);
 }
 
-html{
+html {
     font-family: PFRblack;
 }
 
 
 body {
     background-color: #FFFFFF;
-    height: 500vh;
+    height: 100vh;
 }
 
 nav {
@@ -32,7 +37,9 @@ nav {
     grid-template-columns: 3fr 2fr;
     align-items: center;
     position: fixed;
-    top: 0;
+    top: 0%;
+    overflow: hidden;
+    
 
     #logo {
         margin-left: 122px;
@@ -61,7 +68,7 @@ nav {
             text-decoration: none;
             color: white;
             justify-self: center;
-            
+
         }
 
         .gray {
@@ -89,94 +96,106 @@ nav {
             }
         }
     }
-
 }
 
 
 /*Titulos del topbar*/
 #fondo {
     width: 100%;
-    max-height: 900px;
+    height: 125vh;
     object-fit: cover;
+    
 }
 
 
 #topbar {
-    background-color: rgba(7, 6, 6, 0.39);
+    background-color: rgba(32, 34, 33, 0.678);
     position: fixed;
     height: 90px;
     width: 100%;
+    overflow: hidden;
+
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    padding: 80px;
+    position: absolute;
+    left: 20px;
+    top: 10%;
+
+    /*  buscador: Ex. Villa Budapest*/
+    .contBuscador {
+        justify-self: end;
+
+        .buscador {
+            position: relative;
+
+
+            img {
+                position: absolute;
+                transform: translateY(-50%);
+                right: 10%;
+                top: 50%
+            }
+
+            input {
+                font-family: Brandon;
+                text-decoration: none;
+                color: white;
+                font-size: 30px;
+                border-radius: 100px;
+                padding: 8px 50px;
+                border: 1px solid white;
+                width: fit-content;
+                background-color: transparent;
+
+                &::placeholder {
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
 }
 
 #titulos-topbar {
-    position: absolute;
-    top: 490px;
-    margin-left: 8vw;
-    color: #FFFFFF;
-
+    align-self: self-end;
+    display: grid;
+    gap: 10px;
 
     h2 {
         color: #B4B7B7;
         font-size: 40px;
     }
 
-    h3{
+    h1 {
         color: #FFFFFF;
         font-size: 80px;
-
     }
 
-    button {
-        background-color: transparent;
+    a {
         font-family: Brandon;
-        font-size: 30px;
-        border-color: #FFFFFF;
-        border-radius: 100px;
-        padding: 10px;
+        text-decoration: none;
         color: white;
-        border: 1px solid;
-        width: 350px;
-        height: 55px;
-        top: 900px;
-        justify-items: center;
+        font-size: 30px;
+        border-radius: 100px;
+        padding: 8px 32px;
+        border: 1px solid white;
+        width: fit-content;
 
-        img{
-            align-items: self-start;
-            padding-right: 70px;
-            
+        img {
+            margin-right: 20px;
+
         }
     }
 }
 
-.buscador{
-    display: grid;
-    grid-template-columns: 1fr;
-    position: absolute; 
-    right: 35px ;
-    top: 165px;
-    img{
-        
-        align-items: self-right;
-        padding-left: 230px;
-        
-    }
-   
-    button{
-    
-     background-color: transparent;
-     border-color: #FFFFFF;
-     border-radius: 100px;
-     padding: 10px;
-     color: white;
-     font-family: Brandon;
-     border: 1px solid;
-     text-align: left;
-     width: 450px;
-     height: 50px;
-     font-size: 20px;
-    }
-     
- }
 
 /*REDES: Iconos follow*/
 #redes {
@@ -186,7 +205,7 @@ nav {
     width: 55px;
     justify-items: center;
     position: fixed;
-    top: 380px;
+    top: 386px;
     color: #7E7E7E;
 
     img {
@@ -200,8 +219,8 @@ nav {
         color: #7E7E7E;
         font-family: Brandon;
         font-weight: bold;
-        font-size: 20px;
-        
+        font-size: 23px;
+
     }
 
     #raya {
@@ -212,9 +231,34 @@ nav {
     }
 }
 
+.cont3rayas {
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr 5fr;
+    position: absolute;
+    row-gap: 30px;
+    top: 110vh;
+    width: 100%;
+
+    .cuadrito {
+        height: 5px;
+        width: 31px;
+        background-color: #B4B7B7;
+        margin-right: 8px;
+
+    }
+}
+
 
 /* Desde aqui empieza la version mobile*/
-@media (max-width: 950px) {
+@media (max-width: 900px) {
+    #topbar {
+        overflow: hidden;
+    }
+
+    .contenedor {
+        width: 98%;
+    }
+
     nav {
         #logo {
             display: none;
@@ -222,8 +266,9 @@ nav {
 
         #logo-mobile {
             display: inline;
-            margin-left: 30px;
-            height: 75px;
+            margin-left: 50px;
+            height: 60px;
+            border-radius: 60%;
         }
 
         .links {
@@ -245,8 +290,104 @@ nav {
     }
 }
 
-@media (max-width: 700px){
-    #redes{
+
+@media (max-width: 700px) {
+    nav{
+        overflow: hidden;
+    }
+
+
+    #redes {
         display: none;
+    }
+
+    .contenedor {
+        position: absolute;
+        left: -5%;
+        width: 95%;
+
+        .contBuscador {
+            .buscador {
+                input {
+                    font-size: 23px;
+                    padding: 7px 25px;
+                }
+            }
+        }
+    }
+
+    #titulos-topbar {
+        h2 {
+            font-size: 25px;
+        }
+
+        h1 {
+            font-size: 45px;
+        }
+
+        a {
+            font-size: 25px;
+            padding: 7px 25px;
+        }
+
+    }
+
+}
+
+@media (max-width: 320px) {
+    nav{
+        overflow: hidden;
+    }
+    #topbar{
+        overflow: hidden;
+
+        #fondo{
+            filter: brightness (0.5);
+        }
+    }
+
+    .contenedor {
+        left: -22%;
+        width: 78%;
+        
+        .contBuscador {
+            .buscador {
+                input {
+                    font-size: 21px;
+                    padding: 7px 17px;
+                    }
+
+                .imglupa {
+                        display: none;
+                }
+            }
+        }
+
+        #titulos-topbar {
+            h2 {
+                font-size: 22px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            img {
+                display: none;
+            }
+            a {
+                font-size: 25px;
+                padding: 7px 17px;
+            }
+        }
+     }
+}
+@media (max-width: 250px) {
+    #topbar{
+        overflow: hidden;
+    }
+    .contenedor {
+        left: -40%;
+        width: 78%;
     }
 }

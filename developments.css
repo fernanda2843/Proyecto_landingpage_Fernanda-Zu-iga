@@ -4,17 +4,19 @@
     grid-template-columns: 1fr;
     text-align: center;
     display: inline;
+    margin-top: 10%;
+    width: 80%;
     
     #p1{
         font-size: 40px;
         color: #DF991B; 
-        line-height: 0%;
+        line-height: -10%;
     }
 
     #p2{
         font-size: 80px;
         color: #000000;
-        line-height: 0%;
+        line-height: -10%;
         
     }
 }
@@ -24,7 +26,8 @@ section {
     grid-template-columns: repeat(4, 1fr);
     gap: 50px 10px;
     padding: 100px;
-
+    margin-top: 1%;
+    overflow: hidden;
 }
 
 img {
@@ -48,7 +51,7 @@ h5 {
 
 /*Responsive_ mobile*/
 
-@media (max-width: 1270px) {
+@media (max-width: 900px) {
     section {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -64,7 +67,7 @@ h5 {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     section {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -79,24 +82,27 @@ h5 {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 320px) {
     .titulos{
         #p1{
-            font-size: 30px;
+            font-size: 25px;
         }
         #p2{
-            font-size: 45px;
+            font-size: 30px;
         }
     }
 
     section {
         grid-template-columns: 1fr;
-    }
+        padding: 0px;
+        gap: 10px;
 
-    h5,
-    h4 {
-        display: none;
-        /*Lo uso para que el texto desaparezca a el abrir en un telephone*/
+        #dos, #uno, #cinco, #siete, #ocho{
+            display: none;}
+            
+        h5, h4 {
+                display: none; /*Lo uso para que el texto desaparezca a el abrir en un telephone*/
+         }
     }
 }
 
